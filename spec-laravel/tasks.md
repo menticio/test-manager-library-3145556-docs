@@ -41,4 +41,8 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 |---|---|---|
 | T-01 | terminada | `api` cbd280f: `GET /api/v1/health` → `{"status":"ok"}`; `vendor/bin/pest` (3 pruebas en verde); única ruta registrada |
 | T-02 | terminada | `api` 05c2b9b: consultas de `data-model.md` §10 coinciden; 0 columnas con `DEFAULT`; 6 tablas en `library`; `ck_book_total_positive` y `ck_user_role` siguen pendientes (T-18) |
+| T-03 | terminada | `api` 5b4a134: `tests/Domain/ValueObjectsTest.php` (ISBN de 13 dígitos, cantidad > 0, fin ≥ inicio) |
+| T-04 | terminada | `api` 8c93840: `tests/Domain/BookTest.php` (nunca < 0, nunca > total, baja lógica) |
+| T-05 | terminada | `api` 1a4768f: `tests/Domain/LoanTest.php` con `Clock` falso: `open` → `overdue` → `closed` |
+| T-06 | terminada | `api` e2e95d4: `tests/Domain/MemberAndUserTest.php` (`"Ana "` → `ana`; rol `admin` por API rechazado) |
 | T-20 | en curso (parte 1: motor vacío) | `infra`: `docker compose up -d` levanta PostgreSQL 16 vacío en UTC |
