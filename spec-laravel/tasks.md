@@ -39,4 +39,5 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 
 | # | Estado | Commit / evidencia |
 |---|---|---|
+| T-01 | terminada | `api` cbd280f: `GET /api/v1/health` → `{"status":"ok"}`; `vendor/bin/pest` (3 pruebas en verde); única ruta registrada |
 | T-20 | en curso (parte 1: motor vacío) | `infra`: `docker compose up -d` levanta PostgreSQL 16 vacío en UTC |
