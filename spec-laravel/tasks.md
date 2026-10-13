@@ -59,7 +59,7 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 | T-16 | terminada (rojo c73656c → verde 60cf9de) | `tests/Contract/ApiContractTest.php` recorre las 21 rutas y los códigos de §2; la lista de rutas es exactamente la del contrato. Incluye `PortBindingsServiceProvider` porque la prueba necesita la API levantada |
 | T-17 | terminada (rojo 4dcd2da → verde a18eef4) | Base vacía → `docker/start.sh` → login como admin (`role: admin`); 133 pruebas en verde |
 | T-19 | terminada | `api` 5a11ea3: pruebas `arch()` de Pest (artículos I, II, III y IV); se comprobó que fallan al meter `Illuminate` en el dominio o un adaptador fuera de la composición |
-| T-20 | parcial | `infra` b0bdae5 + e005d94 + b2ae8a5: `docker compose up -d --build` levanta el motor vacío y la API (migra y crea el admin). El frontend corre con `npm run dev` en `app`; falta su contenedor |
+| T-20 | terminada | `infra` b0bdae5 + e005d94 + b2ae8a5 + fd70400, `app` 4dba4eb: `docker compose up -d` levanta el motor vacío, la API (migra y crea el admin) y el frontend en 5173 |
 | T-21 | terminada (rojo e8a2799 → verde 222e4ff en `api`; `tool` 5fe61fa) | Sembrador Node.js solo por la API: 40 libros, 10 socios, 15 préstamos; `/loans/overdue` devuelve 3 líneas y el reporte 12 filas |
 | T-22 | terminada | `app` 2610be8: recorrido manual ingresar → crear libro → crear socio → prestar → devolver → reporte |
 | T-23 | terminada | `page` a500cd7: HTML y CSS estáticos, sin API ni código; revisada a 375 px y en escritorio |
