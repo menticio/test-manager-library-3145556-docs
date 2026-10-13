@@ -58,4 +58,9 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 | T-15 | terminada (rojo d52299c → verde 26483f4) | `tests/Integration/CoverStorageTest.php`: PNG de 2 MB ok, 3 MB → 422, sin portada → `null` |
 | T-16 | terminada (rojo c73656c → verde 60cf9de) | `tests/Contract/ApiContractTest.php` recorre las 21 rutas y los códigos de §2; la lista de rutas es exactamente la del contrato. Incluye `PortBindingsServiceProvider` porque la prueba necesita la API levantada |
 | T-17 | terminada (rojo 4dcd2da → verde a18eef4) | Base vacía → `docker/start.sh` → login como admin (`role: admin`); 133 pruebas en verde |
-| T-20 | en curso (parte 1: motor vacío) | `infra`: `docker compose up -d` levanta PostgreSQL 16 vacío en UTC |
+| T-19 | terminada | `api` 5a11ea3: pruebas `arch()` de Pest (artículos I, II, III y IV); se comprobó que fallan al meter `Illuminate` en el dominio o un adaptador fuera de la composición |
+| T-20 | parcial | `infra` b0bdae5 + e005d94 + b2ae8a5: `docker compose up -d --build` levanta el motor vacío y la API (migra y crea el admin). El frontend corre con `npm run dev` en `app`; falta su contenedor |
+| T-21 | terminada (rojo e8a2799 → verde 222e4ff en `api`; `tool` 5fe61fa) | Sembrador Node.js solo por la API: 40 libros, 10 socios, 15 préstamos; `/loans/overdue` devuelve 3 líneas y el reporte 12 filas |
+| T-22 | terminada | `app` 2610be8: recorrido manual ingresar → crear libro → crear socio → prestar → devolver → reporte |
+| T-23 | terminada | `page` a500cd7: HTML y CSS estáticos, sin API ni código; revisada a 375 px y en escritorio |
+| T-18 | no se hace | Su evidencia exige reclasificar `ck_book_total_positive` y `ck_user_role` en `data-model.md` §4, que está en `spec-python/` y no se modifica (ADR-005). Crear los `CHECK` sin actualizar ese documento violaría el artículo X. Queda pendiente para quien pueda cambiar el documento del negocio |
