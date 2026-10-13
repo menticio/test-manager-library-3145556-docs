@@ -40,4 +40,5 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 | # | Estado | Commit / evidencia |
 |---|---|---|
 | T-01 | terminada | `api` cbd280f: `GET /api/v1/health` → `{"status":"ok"}`; `vendor/bin/pest` (3 pruebas en verde); única ruta registrada |
+| T-02 | terminada | `api` 05c2b9b: consultas de `data-model.md` §10 coinciden; 0 columnas con `DEFAULT`; 6 tablas en `library`; `ck_book_total_positive` y `ck_user_role` siguen pendientes (T-18) |
 | T-20 | en curso (parte 1: motor vacío) | `infra`: `docker compose up -d` levanta PostgreSQL 16 vacío en UTC |
