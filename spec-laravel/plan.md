@@ -49,7 +49,18 @@ dentro del esquema `library`, UUID generados por el dominio, y el cuerpo de erro
 | Arquitectura | Artículos I, II y III | Pruebas `arch()` de Pest en `tests/Architecture/` |
 | Concurrencia | Dos préstamos del último ejemplar | PostgreSQL real |
 
-## 4. Orden de construcción
+## 4. Repositorios satélite (T-20 a T-23)
+
+Se escribe **antes** de construirlos (indicación del instructor: primero se cambia la documentación, después el código).
+
+| Tarea | Repo | Decisión | Evidencia |
+|---|---|---|---|
+| T-20 | `infra` | `docker-compose.yml` levanta `db` (motor vacío), `api` (imagen del repo `api`, arranca con `docker/start.sh`: migra y crea el admin) y `app` (frontend). Los seis repos se clonan uno al lado del otro; `infra` los construye con rutas relativas. Secretos solo en `infra/.env` | `docker compose up -d --build`; antes de la API la base no tiene tablas |
+| T-21 | `tool` | Script **Node.js 22 sin dependencias** (`fetch`) que usa **solo la API**: login admin → ≥ 40 libros, 10 socios, 15 préstamos, 3 vencidos. Para crear vencidos sin SQL ni esperar 14 días, el adaptador `SystemClock` acepta `CLOCK_OFFSET_DAYS` (por defecto 0): el sembrador corre una fase con la API desplazada al pasado y otra en el presente. El reloj ya es un puerto (D-05); el dominio no cambia | `/loans/overdue` devuelve 3 líneas y el reporte tiene filas |
+| T-22 | `app` | React + Vite, sin librerías de UI. Pantallas: login, catálogo, socios, prestar, devolver, vencidos, reporte (solo admin). El token vive en memoria de la sesión del navegador (`sessionStorage`); la portada se pide con el token y se muestra como `blob:` | Recorrido manual login → prestar → devolver → reporte |
+| T-23 | `page` | HTML + CSS estáticos, sin JavaScript de negocio ni llamadas a la API. Muestra qué es el sistema, cómo se construyó (SDD, DDD, TDD) y el avance; **no muestra código** | Se abre sin la API; correcto en móvil y escritorio |
+
+## 5. Orden de construcción
 
 Esqueleto y salud → migración inicial con semilla → dominio → casos de uso con fakes → adaptadores → API → pruebas de contrato y concurrencia.
 El detalle, con evidencia, está en [`tasks.md`](tasks.md).
