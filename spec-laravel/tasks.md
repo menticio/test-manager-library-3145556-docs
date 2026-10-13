@@ -52,4 +52,10 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 | T-10 | terminada | `api` f97ecfb: `tests/Application/ReturnAndOverdueTest.php` (devolver dos veces → `ITEM_ALREADY_RETURNED`) |
 | T-11 | terminada | `api` 92d7ee6: `tests/Application/MostBorrowedReportTest.php` (título viejo tras renombrar, ADR-004) |
 | HU-08 | terminada (sin tarea propia en la tabla) | `api` fc46835: `tests/Application/LoansQueryTest.php` |
+| T-12 | terminada (rojo 0b3501d → verde 37254df) | `tests/Integration/PersistenceRepositoriesTest.php` contra PostgreSQL real |
+| T-13 | terminada (rojo f190454 → verde dba9fcf) | `tests/Integration/LoanPersistenceTest.php`: dos préstamos del último ejemplar → uno registrado, otro `BOOK_NOT_AVAILABLE` (RNF-2) |
+| T-14 | terminada (rojo 6d5f776 → verde c6aa799) | `tests/Integration/SecurityAdaptersTest.php`; la clave no aparece en logs ni respuestas (RNF-3) |
+| T-15 | terminada (rojo d52299c → verde 26483f4) | `tests/Integration/CoverStorageTest.php`: PNG de 2 MB ok, 3 MB → 422, sin portada → `null` |
+| T-16 | terminada (rojo c73656c → verde 60cf9de) | `tests/Contract/ApiContractTest.php` recorre las 21 rutas y los códigos de §2; la lista de rutas es exactamente la del contrato. Incluye `PortBindingsServiceProvider` porque la prueba necesita la API levantada |
+| T-17 | terminada (rojo 4dcd2da → verde a18eef4) | Base vacía → `docker/start.sh` → login como admin (`role: admin`); 133 pruebas en verde |
 | T-20 | en curso (parte 1: motor vacío) | `infra`: `docker compose up -d` levanta PostgreSQL 16 vacío en UTC |
