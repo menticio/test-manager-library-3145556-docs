@@ -45,4 +45,11 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 | T-04 | terminada | `api` 8c93840: `tests/Domain/BookTest.php` (nunca < 0, nunca > total, baja lógica) |
 | T-05 | terminada | `api` 1a4768f: `tests/Domain/LoanTest.php` con `Clock` falso: `open` → `overdue` → `closed` |
 | T-06 | terminada | `api` e2e95d4: `tests/Domain/MemberAndUserTest.php` (`"Ana "` → `ana`; rol `admin` por API rechazado) |
+| T-07 | terminada | `api` 02ab652: `tests/Application/AuthenticationTest.php` (HU-01 y HU-02 contra fakes; rol `admin` → 422) |
+| T-08 | terminada | `api` e0c49f1: `tests/Application/BooksTest.php` (HU-03 y HU-04 contra fakes) |
+| HU-05 | terminada (sin tarea propia en la tabla) | `api` 7ead9a0: `tests/Application/MembersTest.php` |
+| T-09 | terminada | `api` 32395ac: `tests/Application/LendBooksTest.php` (límites, vencidos, sin ejemplares, reintento ADR-002) |
+| T-10 | terminada | `api` f97ecfb: `tests/Application/ReturnAndOverdueTest.php` (devolver dos veces → `ITEM_ALREADY_RETURNED`) |
+| T-11 | terminada | `api` 92d7ee6: `tests/Application/MostBorrowedReportTest.php` (título viejo tras renombrar, ADR-004) |
+| HU-08 | terminada (sin tarea propia en la tabla) | `api` fc46835: `tests/Application/LoansQueryTest.php` |
 | T-20 | en curso (parte 1: motor vacío) | `infra`: `docker compose up -d` levanta PostgreSQL 16 vacío en UTC |
