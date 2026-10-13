@@ -64,3 +64,8 @@ el desempeño con SDD, no la cantidad de tareas: una tarea con evidencia vale m�
 | T-22 | terminada | `app` 2610be8: recorrido manual ingresar → crear libro → crear socio → prestar → devolver → reporte |
 | T-23 | terminada | `page` a500cd7: HTML y CSS estáticos, sin API ni código; revisada a 375 px y en escritorio |
 | T-18 | no se hace | Su evidencia exige reclasificar `ck_book_total_positive` y `ck_user_role` en `data-model.md` §4, que está en `spec-python/` y no se modifica (ADR-005). Crear los `CHECK` sin actualizar ese documento violaría el artículo X. Queda pendiente para quien pueda cambiar el documento del negocio |
+| RNF-1 | cumplido | `tool` `node seed.mjs load`: 5 000 libros creados por la API; 20 búsquedas, mediana 19 ms y máxima 25 ms (< 300 ms) |
+| RNF-2 | cumplido | `tool` `node seed.mjs race` con la API en 4 workers: dos préstamos simultáneos del último ejemplar → uno 201 y otro 409 `BOOK_NOT_AVAILABLE`, 0 disponibles |
+| RNF-3 | cumplido | La clave del admin no aparece en los logs de la API (revisado en T-17 y T-20); ninguna respuesta incluye `password` ni `password_hash` (prueba de contrato) |
+| RNF-4 | cumplido | `tests/Contract/ApiContractTest.php`: todo error, incluidos 404 y 500, usa `{code, message, details}` |
+| RNF-5 | cumplido | `docker compose up -d` en `infra`; la base arranca sin tablas hasta que la API migra |
